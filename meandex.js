@@ -1,9 +1,20 @@
-let saludito = document.getElementsByClassName("saludito");
-saludito[0].style = "color:blue"
-let texto = document.getElementById("container")
-texto.innerText = "de què me habla usted";
-texto.style = "background-color:orange";
-let lista = document.getElementsByTagName("li")
-lista[1].innerHTML = "soy el elemento 2";
-lista[25].innerHTML = "soy el elemento 26";
-lista[25].innerHTML = lista[25].innerHTML + "soy el elemento 26";
+
+let textInputElement = document.getElementById('textInput');
+textInputElement.addEventListener('keyup', function(){
+    
+  let valorH = textInputElement.value;
+  while(isNaN(valorH)){
+    valorH = prompt("Ingrese una cantidad")
+    }while(valorH>30){
+        valorH = prompt("No hacemos ventas mayores a 30 litros")
+        }        
+  console.log('Su nuevo total es de "' + valorH*35 + ' soles"');
+  
+}
+);
+
+const nerv = []
+function calcVal() {
+    nerv.push("Su nuevo total es de " + textInputElement.value*35 + " soles");
+    document.getElementById("demure").innerHTML = nerv;
+}
